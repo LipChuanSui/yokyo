@@ -1,0 +1,83 @@
+<h2><?= $title; ?></h2>
+
+<?php //echo validation_errors(); ?>
+
+<?php echo form_open('timetable/update'); ?>
+
+<input type="hidden" name="id" value="<?php echo $event['id']; ?>">
+<div class="form-group">
+  <label>Title</label>
+  <input type="text" class="form-control" name="title" placeholder="Add Title" value="<?php echo $event['title']; ?>">
+</div>
+<div class="form-group">
+	<label>Sports</label>
+	<select name="sport_id" class="form-control">
+		<?php foreach($sports as $sport): ?>
+      <option value="<?php echo $sport['id']; ?>"
+
+        <?php if($sport['id'] == $event['sport_id']):?>
+         selected
+        <?php endif;?>
+
+        ><?php echo $sport['sport_name']; ?></option>
+		<?php endforeach; ?>
+	</select>
+</div>
+
+<?php $time_start = date("m/d/Y g:i a", strtotime($event['time_started'])) ?>
+
+<div class="form-group">
+	<label>Time Start</label>
+	<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+		<input value="<?php echo $time_start; ?>" name="time_start" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" />
+		<div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+			<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+		</div>
+	</div>
+</div>
+<script>
+$(function () {
+    $('#datetimepicker1').datetimepicker({
+			defaultDate: "8/2/2020",
+			minDate: "8/2/2020",
+			maxDate: "8/8/2020",
+    });
+});
+
+
+</script>
+<div class="form-group">
+	<label>Venues</label>
+	<select name="venue_id" class="form-control">
+		<?php foreach($venues as $venue): ?>
+		<option value="<?php echo $venue['id']; ?>"
+
+      <?php if($venue['id'] == $event['venue_id']):?>
+       selected
+      <?php endif;?>
+
+      ><?php echo $venue['venue_name']; ?></option>
+		<?php endforeach; ?>
+	</select>
+</div>
+<div class="form-group">
+	<label>Types</label>
+	<select name="type_id" class="form-control">
+		<?php foreach($types as $type): ?>
+		<option value="<?php echo $type['id']; ?>"
+
+      <?php if($type['id'] == $event['type_id']):?>
+       selected
+      <?php endif;?>
+
+      ><?php echo $type['type_name']; ?></option>
+		<?php endforeach; ?>
+	</select>
+</div>
+<div class="form-group">
+  <label>Winner</label>
+  <input type="text" class="form-control" name="result" placeholder="Add Result" value="<?php echo $event['result']; ?>">
+</div>
+
+<button type="submit" class="btn btn-success">Submit</button>
+<?php echo form_close(); ?>

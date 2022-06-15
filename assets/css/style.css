@@ -1,0 +1,274 @@
+/*header*/
+.sticky {
+	position: fixed !important;
+	top: 0;
+	width: 100%;
+	background-color: white;
+	padding: 5px 1rem !important;
+	z-index: 99;
+}
+
+#fixheader {
+	-webkit-transition: .2s all ease-in;
+	-moz-transition: .2s all ease-in;
+	transition: .2s all ease-in;
+	background: beige
+}
+
+#navbarResponsive {
+	width: 85%;
+}
+
+.logo {
+	width: 15%;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	/* full screen */
+	width: 100vw;
+	height: 100vh;
+	/* transparent black */
+	background: rgba(0, 0, 0, 0.7);
+	/* middle layer, i.e. appears below the sidebar */
+	z-index: 998;
+	opacity: 0;
+	/* animate the transition */
+	transition: all 0.5s ease-in-out;
+}
+
+.overlay.active {
+	display: block;
+	opacity: 1;
+}
+
+.sidebar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 10px;
+	z-index: 9999;
+}
+
+.sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #000;
+	display: block;
+	transition: 0.3s;
+	width: 250px;
+}
+
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+/*.sidebar .closebtn {
+  position: relative;
+  top: 0;
+  right: 0px;
+  font-size: 30px;
+  margin-left: 0;
+  padding: 0 15px;
+  text-align: right;
+}*/
+.icon-close:before {
+	content: "\2573";
+}
+
+.openbtn {
+	font-size: 20px;
+	cursor: pointer;
+	color: #000;
+	padding: 10px 15px;
+	border: none;
+	display: none;
+	position: absolute;
+	left: 14px;
+	background: beige;
+}
+
+/*link*/
+a.btn-read {
+	color: rgba(0, 0, 0, .5);
+	background-color: beige;
+	border-color: beige;
+}
+
+a.btn-link:hover {
+	color: rgba(0, 0, 0, .7);
+}
+
+.pad_bot {
+	padding-bottom: 150px;
+	min-height: 500px;
+	padding-top: 30px;
+}
+
+/*filter svg*/
+.filter-red {
+	filter: invert(90%) sepia(56%) saturate(6342%) hue-rotate(356deg) brightness(111%) contrast(106%);
+}
+
+/*result text capitalize*/
+#resultText {
+	text-transform: capitalize;
+}
+
+/*responsive image*/
+.image_responsive {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+}
+
+/*sport icon*/
+.sports_link {
+	text-decoration: none;
+	display: block;
+	padding: 8px;
+	height: 100%;
+}
+
+.sports_row {
+	padding: 0;
+	list-style: none;
+}
+
+.sports_title {
+	margin-top: 4px;
+	font-size: 1rem;
+	text-align: center;
+	font-weight: 700;
+	line-height: 1.33333;
+	word-break: keep-all;
+}
+
+.sports_pic img {
+	height: 120px;
+}
+
+/*table timetable*/
+ .table-timetable td:first-child {
+	position: sticky;
+	left: 0px;
+	background-color: white;
+	z-index: 10;
+}
+/*carousel img*/
+#carousel_ID .carousel-inner img{
+	width: auto;
+	height: 500px;
+}
+
+.carousel-item{
+	text-align: center;
+}
+
+#carousel_home .carousel-inner img{
+	width: 100%;
+	height: 100%;
+}
+/*a link*/
+a{
+	color:#5d5d4a !important;
+}
+/*icon*/
+.mt-4 .fa {
+  padding: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.mt-4 .fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white !important;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white !important;
+}
+
+
+.fa-youtube {
+  background: #bb0000;
+  color: white !important;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white !important;
+}
+/*footer*/
+.footer{
+	background: beige;
+}
+/*mascot */
+.mascot_class img{
+	width:50%;
+	height:auto;
+}
+/*pages img*/
+.page_img{
+	width:100%;
+	height:auto;
+}
+
+
+
+
+@media screen and (max-height: 450px) {
+	.sidebar {
+		padding-top: 15px;
+	}
+
+	.sidebar a {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#carousel_ID .carousel-inner img{
+		width: 100%;
+		height: 100%;
+	}
+	.logo {
+		width: 100%;
+		text-align: center;
+		margin: 0;
+	}
+
+	.logo img {
+		height: 90px;
+	}
+
+	.openbtn {
+		display: block !important;
+	}
+
+	.sports_pic img {
+		height: 60px;
+	}
+	.mascot_class .col-md-6{
+		text-align: center;
+	}
+	.mascot_class h1{
+		text-align: center;
+		padding-top: 0px;
+	}
+}
